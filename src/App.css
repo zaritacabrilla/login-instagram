@@ -1,38 +1,605 @@
-.App {
-  text-align: center;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.contenedor-principal-instagram {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 32px;
+  padding-bottom: 32px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+.maqueta-celular {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-right: 32px;
+  margin-bottom: 12px;
+  margin-left: auto;
+  align-self: center;
+  position: relative;
+}
+
+.maqueta-celular img {
+  width: 380.32px;
+  height: 581.15px;
+}
+
+.contenedor-celulares {
+  display: flex;
+}
+
+.imagenes-celulares {
+  margin: 25px 0px 0px 110px;
+  position: absolute;
+}
+
+/* Slider de imagenes instagram*/
+
+.imagenes-celulares img {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 250px;
+  height: 540px;
+  opacity: 0;
+  visibility: hidden;
+  animation: animate 30s linear infinite;
+}
+
+.imagenes-celulares img:nth-child(1) {
+  animation-delay: 0s;
+}
+.imagenes-celulares img:nth-child(2) {
+  animation-delay: 7.5s;
+}
+.imagenes-celulares img:nth-child(3) {
+  animation-delay: 15s;
+}
+.imagenes-celulares img:nth-child(4) {
+  animation-delay: 22.5s;
+}
+
+@keyframes animate {
+  0%{
+    opacity: 0;
+    visibility: hidden;
+  }
+  10% {
+    opacity: 1;
+    visibility: visible;
+  }
+  20% {
+    opacity: 1;
+    visibility: visible;
+  }
+  30%,100%{
+    opacity: 0;
+    visibility: hidden;
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+@media (max-width: 875px) {
+  .contenedor-celulares {
+    display: none;
+  }
+}
+
+.estructura-login {
+  width: 350px;
+  height: 633px;
+  margin-top: 16px;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+}
+
+.contenedor-estructura-login {
+  border: 1px solid #d3d3d3;
+  width: 350px;
+  height: 401.99px;
+  margin: auto;
+  padding: 10px 0px 10px 0px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contenedor-imagen-logo {
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+.logo-instagram {
+  background-position: 0px 0px;
+  background-size: 176px 181px;
+  width: 175px;
+  height: 51px;
+  display: inline-block;
+}
+
+.formulario-login {
+  max-width: 100%;
+  margin: auto;
+}
+
+.elementos-login {
+  max-width: 100%;
+  margin-top: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.formulario-login input {
+  display: block;
+  max-width: 100%;
+  width: 268px;
+  height: 38px;
+  background-color: #fafafa;
+  padding: 9px 0px 7px 8px;
+  font-size: 12px;
+  border: 1px solid #d3d3d3;
+  background-color: rgb(250, 250, 250);
+  transition: border 0.2s;
+  border-bottom-width: 1px;
+  border-radius: 5px;
+}
+
+.boton-usuario input:focus {
+  outline: none;
+  border: 1px solid #a6a6a6;
+}
+
+/* Coloca el placeholder en la parte de arriba del input */
+
+.input-wrapper {
+  position: relative;
+  /* width: 300px; */
+  font-size: 12px;
+}
+
+.texto-input {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+  color: #737373;
+  font-weight: 450;
+}
+
+.input-wrapper.active label,
+.input-shown + label {
+  top: -1px;
+  font-size: 10px;
+  color: #737373;
+  font-weight: 450;
+}
+
+.input-wrapper.active label {
+  margin-top: 5px; /* Para mover el label arriba del input cuando el usuario escribe*/
+}
+
+.input-wrapper.active input {
+  padding: 14px 0 2px 8px; /* Para mover el texto que escribe el usuario dentro del input */
+}
+
+/* Termina la colocación en el placeholder en la parte de arriba del input */
+
+ /* --------- Botón contraseña ------ */
+.contenedor-boton-contraseña {
+  margin-top: 0.3rem;
+}
+
+.contenedor-boton-contraseña input:focus {
+  outline: none;
+  border: 1px solid #a6a6a6;
+}
+
+.input-wrapper-contraseña {
+  position: relative;
+  font-size: 12px;
+}
+
+.boton-contraseña {
+  width: calc(100% - 32px);
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  float: left;
+}
+
+.toggle-button {
+  /* width: 32px;
+  padding: 10px; */
+  position: absolute;
+  right: 10px;
+  top: 9px;
+  border: none;
+  font-size: 14px;
+  color: #000000;
+  font-weight: 600;
+  background-color: transparent;
+  cursor: pointer;
+  /* float: right; */
+}
+
+.toggle-button:hover {
+  color: #737373;
+  background-color: transparent;
+}
+
+.texto-password {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  transition: 0.3s ease-out;
+  pointer-events: none;
+  color: #737373;
+  font-weight: 450;
+}
+
+.input-wrapper-contraseña.active label,
+.input-shown + label {
+  top: -1px;
+  font-size: 10px;
+  color: #737373;
+  font-weight: 450;
+}
+
+.input-wrapper-contraseña.active label {
+  margin-top: 5px; /* Para mover el label arriba del input cuando el usuario escribe*/
+}
+
+.input-wrapper-contraseña.active input{
+padding: 14px 0 2px 8px; /* Para mover el texto que escribe el usuario dentro del input */
+}
+
+.password-input:focus + .password-label,
+.password-input:not(:placeholder-shown) + .password-label {
+  top: -12px;
+  font-size: 12px;
+  color: #333;
+}
+
+/* --------- Botón contraseña ------ */
+
+/* .formulario-login button {
+  display: block;
+  max-width: 100%;
+  width: 268px;
+  height: 32px;
   color: white;
+  background-color: rgb(105, 174, 243);
+  border: rgb(105, 174, 243);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin: 8px 40px;
+  margin-top: 14px;
+  padding: 0;
+} */ /* Esto le pone estilos a los botones de todo el primer apartado, se podrá quitar al final para que no perjudique*/
+
+.boton-inicio-sesion button{
+  display: block;
+  max-width: 100%;
+  width: 268px;
+  height: 32px;
+  color: white;
+  background-color: rgb(105, 174, 243);
+  border: rgb(105, 174, 243);
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  margin-bottom: 8px;
+  margin: 8px 40px;
+  margin-top: 14px;
+  padding: 0;
 }
 
-.App-link {
-  color: #61dafb;
+.boton-inicio-sesion button:hover {
+  cursor: default;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.separador-login {
+  width: 268px;
+  height: 14.99px;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.separador-texto-uno {
+  color: #737373;
+  width: 120px;
+  height: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.separador-letra {
+  text-transform: uppercase;
+  color: #737373;
+  font-size: 13px;
+  font-weight: 700;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-align: center;
+  margin: 0px 18px 0px 18px;
+}
+
+.separador-texto-dos {
+  color: #737373;
+  width: 120px;
+  height: 10px;
+  margin: 10px 0px 0px 0px;
+}
+
+.iniciar-sesion-facebook {
+  max-width: 100%;
+  width: 268px;
+  height: 20px;
+  display: flex;
+  justify-content: center;
+  margin-top: 1.5rem;
+  cursor: pointer;
+}
+
+.icono-facebook {
+  width: 16px;
+  height: 16px;
+  margin: 0px 8px 0px 0px;
+}
+
+.texto-inicio-sesion {
+  font-size: 14px;
+  color: #385185;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 700;
+}
+
+.nueva-contraseña {
+  max-width: 100%;
+  display: flex;
+  margin: 0;
+}
+
+.olvido-contraseña {
+  width: 348px;
+  height: 16px;
+  display: flex;
+  justify-content: center;
+  font-size: 12px;
+  color: #00376b;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  cursor: pointer;
+}
+
+.contenedor-crear-cuenta {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid #d3d3d3;
+  width: 350px;
+  height: 63px;
+  font-size: 14px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  padding: 10px 0px 10px 0px;
+  margin-bottom: 10px;
+}
+
+.texto-cuenta-nueva {
+  color: #000000;
+  font-weight: 500;
+  margin: 0px 5px 0px 0px;
+}
+
+.texto-registro-cuenta {
+  color: #0095f6;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.descargar-aplicacion {
+  max-width: 100%;
+  width: 350px;
+  height: 95px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.parrafo-descarga {
+  justify-content: center;
+  text-align: center;
+  margin: auto;
+}
+
+.texto-descargar-aplicacion {
+  font-size: 14px;
+  color: #000000;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0;
+  width: 310px;
+  height: 18px;
+}
+
+.imagenes-descarga {
+  display: flex;
+  justify-content: center;
+  width: 350px;
+  height: 44px;
+  margin: 10px 0px 10px 0px;
+}
+
+.imagenes-descarga img {
+  height: 40px;
+}
+
+.descarga-google-play {
+  cursor: pointer;
+}
+
+.descarga-app-store {
+  margin: 0px 10px 0px 0px;
+  cursor: pointer;
+}
+
+.contenedor-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  bottom: 0;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin-bottom: 52px;
+}
+
+.fila-enlaces {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 0;
+  padding: 0;
+}
+
+.fila-enlaces li {
+  list-style: none;
+  text-decoration-line: inherit;
+  color: #737373;
+  font-size: 12px;
+  margin-right: 1rem;
+  cursor: pointer;
+  margin-bottom: 6px;
+}
+
+@media (max-width: 450px) {
+  .contenedor-principal-instagram {
+    margin-top: 0;
   }
-  to {
-    transform: rotate(360deg);
+
+  .estructura-login {
+    margin-top: 0;
   }
+
+  .contenedor-estructura-login {
+    border: none;
+    margin-top: 0;
+  }
+
+  .contenedor-crear-cuenta {
+    border: none;
+  }
+}
+
+.linea-enlace:hover {
+  border-bottom: 1px solid #737373;
+}
+
+.fila-copyright {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0px 12px 0px;
+}
+
+.dropdown button {
+  display: flex;
+  color: #737373;
+  font-size: 12px;
+  font-weight: 400;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+}
+
+.icono-flecha {
+  margin-left: 3px;
+  color: #737373;
+  margin-top: 0;
+}
+
+.Dropdown-de-lenguaje {
+  color: gray !important;
+  background-color: transparent !important;
+  border: none !important;
+  font-size: 12px !important;
+  padding: 2px !important;
+  margin: 1px !important;
+  margin-right: 20px !important;
+}
+
+/* Para quitar la flecha por defecto del dropdown */
+.dropdown-toggle::after {
+  content: none !important;
+}
+
+.opciones-de-lenguaje {
+  background: rgb(43, 43, 43);
+  background: rgb(43, 43, 43);
+  background: linear-gradient(
+    0deg,
+    rgba(43, 43, 43, 0.929030987394958) 0%,
+    rgba(96, 96, 96, 1) 100%
+  );
+}
+
+.dropdown-item {
+  font-size: 12px !important;
+  color: rgb(250, 250, 250) !important;
+  cursor: default !important;
+}
+
+/* Es para cambiar el color del item cuando se coloca el cursor encima*/
+.dropdown-item:hover{
+  background-color: #737373 !important;
+  border-radius: 7px;
+}
+
+.parte-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #737373;
+  font-size: 12px;
+  font-weight: 400;
+}
+
+.icono-copyright {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10px;
+  height: 10px;
+  margin-right: 2px;
+}
+
+.texto-meta {
+  margin: 0px 0px 0px 0px;
 }
